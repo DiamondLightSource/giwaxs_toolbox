@@ -369,9 +369,10 @@ class combo_plotter:
             self.plot_exitmap(filenames, index1vals, index2vals, logscale)
         elif all(["Chimap" in file for file in filenames]):
             self.plot_chimap(filenames, index1vals, index2vals, logscale)
-        print(
-            "Could not match all file types - ensure all files in the file list are of the same type, and one of the following: \n\t[IvsQ , IvsChi, Qmap, exitmap, Chimap]"
-        )
+        else:
+            print(
+                "Could not match all file types - ensure all files in the file list are of the same type, and one of the following: \n\t[IvsQ , IvsChi, Qmap, exitmap, Chimap]"
+            )
 
     def plot_ivsq(
         self,
