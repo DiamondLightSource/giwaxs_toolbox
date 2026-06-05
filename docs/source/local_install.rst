@@ -29,6 +29,7 @@ Installing locally
 
     Make sure you have git installed on your machine (https://github.com/git-guides/install-git)
     Move to the location you want to download the files to, and then clone the repository. 
+    
     .. code-block:: bash 
 
         $ cd path/to/folder/
