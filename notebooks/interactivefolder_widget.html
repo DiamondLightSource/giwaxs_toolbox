@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using the interactive widget to explore folder &mdash; giwaxs_toolbox 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css?v=226d88b4" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=9addc0e5" />
+
+  
+    <link rel="shortcut icon" href="../_static/dls-logo.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            giwaxs_toolbox
+              <img src="../_static/dls-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../diamond_guide.html">Accessing giwaxs_toolbox on Diamond NoMachine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local_install.html">Installation giwaxs_toolbox locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useage_guide.html">Guide to using the giwaxs_toolbox</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">giwaxs_toolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Using the interactive widget to explore folder</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/notebooks/interactivefolder_widget.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Using-the-interactive-widget-to-explore-folder">
+<h1>Using the interactive widget to explore folder<a class="headerlink" href="#Using-the-interactive-widget-to-explore-folder" title="Link to this heading"></a></h1>
+<section id="Description">
+<h2>Description<a class="headerlink" href="#Description" title="Link to this heading"></a></h2>
+<p>This option allows you to create a dropdown menu to select the filetype, and then a second dropdown menu with all files which have a filename containing the that filetype. The interactive folder explorer is started by using the following commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">individual_plotter</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">ipympl</span>
+<span class="n">ind</span><span class="o">=</span><span class="n">individual_plotter</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="s1">&#39;path/to/your/data&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Datasets saved using I07 fast_rsm software will be one of three types:</p>
+<ul class="simple">
+<li><p>IvsQ : this is a 1d dataset of an azimuthal integration with intensity data, along with 2theta and Q values</p></li>
+<li><p>Qmap : this is a 2d dataset of Intensity based on Q in-plane and Q out-of-plane</p></li>
+<li><p>exitangles : this is a 2d dataset of Intensity based on exit angle perpendicular and exit angle parallel</p></li>
+</ul>
+<p>If your dataset has higher indexes slider bars will show up allowing you to select which image from your dataset you want to view.</p>
+</section>
+<section id="Code-example">
+<h2>Code example<a class="headerlink" href="#Code-example" title="Link to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">individual_plotter</span><span class="p">,</span> <span class="n">reset_plots</span>
+<span class="c1">#set interactive ipympl</span>
+<span class="o">%</span><span class="k">matplotlib</span> ipympl
+
+<span class="c1">#create the plotter for individual datasets</span>
+<span class="n">folder1</span><span class="o">=</span><span class="s2">&quot;/dls/science/groups/das/ExampleData/i07/fast_rsm_example_data/tests_versioned/v2.4.1_i07_2026-04-14&quot;</span>
+<span class="n">ind</span><span class="o">=</span><span class="n">individual_plotter</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="n">folder1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c4854c44b6ac49c7a1448670211094f9", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "908b415023354cb89745383e2338a461", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p>The code above should output an interactive widget where you can select various file types, and then scroll through all the files found which match the selected file type</p>
+<img alt="image1.png" src="../_images/ivsq_interact.png" />
+</section>
+</section>
+<section id="Visualising-data-stack-as-a-heatmap">
+<h1>Visualising data stack as a heatmap<a class="headerlink" href="#Visualising-data-stack-as-a-heatmap" title="Link to this heading"></a></h1>
+<p>If your lineprofile dataset has more than one dimension, you can select the heatmap option to view the data along the first index as a heatmap</p>
+<img alt="image2.png" src="../_images/ivsq_interact_heatmap.png" />
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Diamond Light Source Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

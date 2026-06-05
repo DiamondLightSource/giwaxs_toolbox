@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>giwaxs toolbox examples &mdash; giwaxs_toolbox 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css?v=226d88b4" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=9addc0e5" />
+
+  
+    <link rel="shortcut icon" href="../_static/dls-logo.svg"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            giwaxs_toolbox
+              <img src="../_static/dls-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../diamond_guide.html">Accessing giwaxs_toolbox on Diamond NoMachine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../local_install.html">Installation giwaxs_toolbox locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useage_guide.html">Guide to using the giwaxs_toolbox</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">giwaxs_toolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">giwaxs toolbox examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/notebooks/giwaxs_toolbox_guide.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="giwaxs-toolbox-examples">
+<h1>giwaxs toolbox examples<a class="headerlink" href="#giwaxs-toolbox-examples" title="Link to this heading"></a></h1>
+<p>Below are some example cells on how to use the plotting functions available in the giwaxs toolbox.</p>
+<section id="Some-tips-on-using-jupyter-notebooks:">
+<h2>Some tips on using jupyter notebooks:<a class="headerlink" href="#Some-tips-on-using-jupyter-notebooks:" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>shift+enter to run a cell</p></li>
+<li><p>ESC while jump out of the activate cell allowing the following commands:</p>
+<ul>
+<li><p>shift+a - gives a new cell above</p></li>
+<li><p>m - changes from code to markdown</p></li>
+<li><p>y changes from markdown to code</p></li>
+</ul>
+</li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># typing text here after a hash appears as comment when code or title when markdown</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="1.-Using-interactive-widget-to-explore-folder">
+<h1>1. Using interactive widget to explore folder<a class="headerlink" href="#1.-Using-interactive-widget-to-explore-folder" title="Link to this heading"></a></h1>
+<section id="Description">
+<h2>Description<a class="headerlink" href="#Description" title="Link to this heading"></a></h2>
+<p>This option allows you to create a dropdown menu to select the filetype, and then a second dropdown menu with all files which have a filename containing the that filetype. The interactive folder explorer is started by using the following commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">individual_plotter</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">ipympl</span>
+<span class="n">ind</span><span class="o">=</span><span class="n">individual_plotter</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="s1">&#39;path/to/your/data&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Datasets saved using I07 fast_rsm software will be one of three types:</p>
+<ul class="simple">
+<li><p>IvsQ : this is a 1d dataset of an azimuthal integration with intensity data, along with 2theta and Q values</p></li>
+<li><p>Qmap : this is a 2d dataset of Intensity based on Q in-plane and Q out-of-plane</p></li>
+<li><p>exitangles : this is a 2d dataset of Intensity based on exit angle perpendicular and exit angle parallel</p></li>
+</ul>
+<p>If your dataset has higher indexes slider bars will show up allowing you to select which image from your dataset you want to view.</p>
+</section>
+<section id="Code-example">
+<h2>Code example<a class="headerlink" href="#Code-example" title="Link to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">executable</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">giwaxs_toolbox</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">individual_plotter</span><span class="p">,</span> <span class="n">reset_plots</span>
+<span class="c1">#set interactive ipympl</span>
+<span class="o">%</span><span class="k">matplotlib</span> ipympl
+
+<span class="c1">#create the plotter for individual datasets</span>
+<span class="n">folder1</span><span class="o">=</span><span class="s2">&quot;/dls/science/groups/das/ExampleData/i07/fast_rsm_example_data/tests_versioned/v2.4.1_i07_2026-04-14&quot;</span>
+<span class="n">ind</span><span class="o">=</span><span class="n">individual_plotter</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="n">folder1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "bc674b89c2474289a85d28f36a8a0dc0", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "cbf40ae6d9924c27849ae6ddb5a3ee9d", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="some-useful-tips-when-viewing-interactive-plots">
+<h1>some useful tips when viewing interactive plots<a class="headerlink" href="#some-useful-tips-when-viewing-interactive-plots" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>hovering the mouse over the current plot area shows a readout of the x,y,intensity values below the plot</p></li>
+<li><p>for 2d images the contrast can be adjusted by selecting the crossed arrows from the toolbar on the left, and then clicking and dragging on the colour bar</p></li>
+</ul>
+<img alt="image.png" src="data:image/png;base64,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" />
+<ul class="simple">
+<li><p>right-click and drag : increases or decreases the overall range of the colourmap</p></li>
+<li><p>left-click and drag : moves the upper and lower limits together</p></li>
+</ul>
+</section>
+<section id="interactivity-issues">
+<h1>interactivity issues<a class="headerlink" href="#interactivity-issues" title="Link to this heading"></a></h1>
+<p>occassionally if you use multiple interactive plots at the same time matplotlib will stop plotting correctly. The function reset_plots() can be ran, which should hopefully reset matplotlib and allow plotting properly again. Below is an example of importing and using the reset_plots function - running this cell and waiting 10 seconds usually enables the interactive plots</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">reset_plots</span>
+<span class="n">reset_plots</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="2.-Quick-comparison-plotting">
+<h1>2. Quick comparison plotting<a class="headerlink" href="#2.-Quick-comparison-plotting" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>Description<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>The giwaxs_toolbox has options for quick comparison plots, where given a list of files the plotter can create plots for quick comparisons</p>
+<p>The first step is to create a comparison plotter using the commands, where the plotter can take anyname:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">ipympl</span>
+<span class="n">plotter</span><span class="o">=</span><span class="n">comparison_plotter</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="s1">&#39;path/to/your/data&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once you have the plotter object, you can then pass it a list of files and it will plot them for comparison. Note that all files must be of the same type.</p>
+<p>first define youfiles</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filelist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;file1.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;file2.hdf5&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>if there is a single datset within each file, then you can simply enter the filenames and whether you want log scaling.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">combo_plotter</span><span class="o">.</span><span class="n">plot_files</span><span class="p">(</span><span class="n">filelist</span><span class="p">,</span><span class="n">logscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>however if you files contain multiple datasets, you need to include a list of the indexes of the dataset you want to plot. For comparing files with multiple datasets to files with a single dataset, the index values shoudl be set to 0 for the file with a single dataset. Note that both index1 values and index2 values must be the same length as the filelist.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># here file 1 is a single dataset so its indexes are 0</span>
+<span class="c1"># file 2 is (m x n x datashape) - selection is m=8 n=2</span>
+<span class="n">ind1vals</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">ind2vals</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">combo_plotter</span><span class="o">.</span><span class="n">plot_files</span><span class="p">(</span><span class="n">filelist</span><span class="p">,</span><span class="n">logscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+<section id="id2">
+<h2>Code example<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">comparison_plotter</span><span class="p">,</span> <span class="n">reset_plots</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="c1">#set interactive ipympl</span>
+<span class="o">%</span><span class="k">matplotlib</span> ipympl
+
+<span class="n">folder1</span><span class="o">=</span><span class="s1">&#39;/dls/i07/data/2026/si44580-1/processing&#39;</span>
+
+
+<span class="c1">#load the comparison plotter</span>
+<span class="n">combo_plotter</span><span class="o">=</span><span class="n">comparison_plotter</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="n">folder1</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+<section id="Example-1---comparing-files-which-all-have-one-dataset">
+<h2>Example 1 - comparing files which all have one dataset<a class="headerlink" href="#Example-1---comparing-files-which-all-have-one-dataset" title="Link to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> ipympl
+<span class="n">reset_plots</span><span class="p">()</span>
+<span class="n">example_ivqfiles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;IvsQ_432196_2026-03-24_10h16m29s.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;IvsQ_610009_2026-03-24_10h23m11s.hdf5&#39;</span><span class="p">]</span>
+
+<span class="n">example_qmapfiles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Qmap_432196_2026-03-24_10h16m31s.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;Qmap_610009_2026-03-24_10h23m02s.hdf5&#39;</span><span class="p">]</span>
+<span class="n">combo_plotter</span><span class="o">.</span><span class="n">plot_files</span><span class="p">(</span><span class="n">example_ivqfiles</span><span class="p">,</span><span class="n">logscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Example-2---comparing-files-which-contain-multiple-datasets">
+<h2>Example 2 - comparing files which contain multiple datasets<a class="headerlink" href="#Example-2---comparing-files-which-contain-multiple-datasets" title="Link to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#filenames=[&#39;IvsQ_610009_2026-03-24_13h44m56s.hdf5&#39;,&#39;IvsQ_531473_2026-03-24_13h40m31s.hdf5&#39;]</span>
+<span class="o">%</span><span class="k">matplotlib</span> ipympl
+<span class="n">reset_plots</span><span class="p">()</span>
+<span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;IvsQ_536350_2026-03-24_10h21m22s.hdf5&#39;</span> <span class="p">,</span><span class="s1">&#39;IvsQ_531473_2026-03-24_10h17m25s.hdf5&#39;</span><span class="p">]</span>
+<span class="n">repeated_file</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;IvsQ_531473_2026-03-24_10h17m25s.hdf5&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
+<span class="c1">#,&#39;Qmap_531473_2026-03-24_13h41m47s.hdf5&#39; ,&#39;Qmap_610009_2026-03-24_13h44m47s.hdf5&#39;,&#39;Qmap_531473_2026-03-24_13h41m47s.hdf5&#39; ]</span>
+<span class="n">ind1vals</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">ind2vals</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">combo_plotter</span><span class="o">.</span><span class="n">plot_files</span><span class="p">(</span><span class="n">repeated_file</span><span class="p">,</span><span class="n">ind1vals</span><span class="p">,</span><span class="n">ind2vals</span><span class="p">,</span><span class="n">logscale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="Extracting-datasets-to-do-specialised-plots">
+<h1>Extracting datasets to do specialised plots<a class="headerlink" href="#Extracting-datasets-to-do-specialised-plots" title="Link to this heading"></a></h1>
+<section id="id3">
+<h2>Description<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>giwaxs_toolbox also has functions to extract the 1d or 2d datasets from i07 processed files which can then be used in personalised plots</p>
+<p>first create a data loader using the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.processing</span><span class="w"> </span><span class="kn">import</span> <span class="n">data_loader</span>
+<span class="n">loader</span> <span class="o">=</span>  <span class="n">data_loader</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="s1">&#39;path/to/your/data&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once you have a data loader for your data folder you can extract a series of datasets using the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filelist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;file1&#39;</span><span class="p">,</span><span class="s1">&#39;file2&#39;</span><span class="p">,</span><span class="s1">&#39;file3&#39;</span><span class="p">]</span>
+<span class="n">results</span><span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">loadfiles</span><span class="p">(</span><span class="n">filelist</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will then give you a list of your datasets, each of which will either be of the type result1d or result2d. These result objects have the following attributes:</p>
+<p>result1d</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result1d</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># the one dimensional profile data</span>
+<span class="n">result1d</span><span class="o">.</span><span class="n">x_axis</span> <span class="c1"># the axis data for the x-axis</span>
+</pre></div>
+</div>
+<p>result2d</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result2d</span><span class="o">.</span><span class="n">data</span>   <span class="c1"># the two dimensional image data</span>
+<span class="n">result2d</span><span class="o">.</span><span class="n">x_axis</span> <span class="c1"># the axis data for the x-axis</span>
+<span class="n">result2d</span><span class="o">.</span><span class="n">y_axis</span> <span class="c1"># the axis data for the y-axis</span>
+</pre></div>
+</div>
+</section>
+<section id="loading-in-1d-datasets">
+<h2>loading in 1d datasets<a class="headerlink" href="#loading-in-1d-datasets" title="Link to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.processing</span><span class="w"> </span><span class="kn">import</span> <span class="n">data_loader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">reset_plots</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder1</span><span class="o">=</span><span class="s2">&quot;/dls/science/groups/das/ExampleData/i07/fast_rsm_example_data/tests_versioned/v2.4.1_i07_2026-04-14&quot;</span>
+<span class="n">filelist</span><span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder1</span><span class="p">)</span> <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.hdf5&#39;</span><span class="p">)]</span>
+
+<span class="c1">#create your data loader for your data directory path</span>
+<span class="n">loader</span><span class="o">=</span><span class="n">data_loader</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="n">folder1</span><span class="p">)</span>
+
+<span class="c1">#choose which datasets you want to load</span>
+<span class="n">example_ivqfiles</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;IvsQ_536350_2026-04-14_14h20m34s.hdf5&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="c1">#, &quot;IvsQ_610009_2026-02-18_16h55m51s.hdf5&quot;]</span>
+
+<span class="c1"># load the files into a results object</span>
+<span class="n">ivqresults</span><span class="o">=</span><span class="n">loader</span><span class="o">.</span><span class="n">loadfiles</span><span class="p">(</span><span class="n">example_ivqfiles</span><span class="p">,</span><span class="n">index1vals</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_1dbatch_datafile</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">paths</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">index1</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">index2</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span>
+<span class="p">):</span>
+    <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5data</span><span class="p">:</span>
+        <span class="n">y_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">h5data</span><span class="p">[</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+        <span class="n">x_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">h5data</span><span class="p">[</span><span class="n">paths</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+        <span class="n">expected_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">dataind</span><span class="p">,</span> <span class="n">index1</span><span class="p">,</span> <span class="n">index2</span><span class="p">,</span> <span class="n">indmax2</span><span class="p">,</span> <span class="n">indmax1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_shape</span><span class="p">(</span>
+            <span class="n">y_shape</span><span class="p">,</span> <span class="n">expected_shape</span><span class="p">,</span> <span class="n">index1</span><span class="p">,</span> <span class="n">index2</span>
+        <span class="p">)</span>
+        <span class="n">axisind</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_shape</span><span class="p">(</span><span class="n">x_shape</span><span class="p">,</span> <span class="n">expected_shape</span><span class="p">,</span> <span class="n">index1</span><span class="p">,</span> <span class="n">index2</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_1d_data</span><span class="p">(</span><span class="n">h5data</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">dataind</span><span class="p">,</span> <span class="n">axisind</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="n">index1</span><span class="p">,</span> <span class="n">index2</span><span class="p">,</span> <span class="n">indmax1</span><span class="p">,</span> <span class="n">indmax2</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5data</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">folder1</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;IvsQ_531473_2026-04-14_14h15m09s.hdf5&quot;</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_path</span> <span class="o">=</span> <span class="s2">&quot;integrations/Intensity&quot;</span>
+<span class="n">q_path</span> <span class="o">=</span> <span class="s2">&quot;integrations/Q_angstrom^-1&quot;</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">int_path</span><span class="p">,</span> <span class="n">q_path</span><span class="p">]</span>
+<span class="n">y_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">h5data</span><span class="p">[</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">x_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">h5data</span><span class="p">[</span><span class="n">paths</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">expected_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valind</span><span class="o">=</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span><span class="mi">5</span><span class="p">,</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">h5data</span><span class="p">[</span><span class="n">int_path</span><span class="p">][</span><span class="n">valind</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5data</span><span class="p">[</span><span class="n">q_path</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#set interactive ipympl</span>
+<span class="o">%</span><span class="k">matplotlib</span> ipympl
+
+<span class="c1">#create your figure</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">axs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1">#use the result objects from the results list to plot onto the graph</span>
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span><span class="n">res</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ivqresults</span><span class="p">):</span>
+    <span class="n">axs</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x_axis</span><span class="p">,</span><span class="n">res</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">example_ivqfiles</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+
+<span class="n">axs</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="loading-in-2d-datasets">
+<h2>loading in 2d datasets<a class="headerlink" href="#loading-in-2d-datasets" title="Link to this heading"></a></h2>
+<p>You can do the same process for 2d datasets as well, below is an example using the result2d objects along with extra plotting shapes for customised plots</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Annulus</span><span class="p">,</span> <span class="n">Wedge</span>
+
+<span class="n">folder1</span><span class="o">=</span><span class="s1">&#39;/dls/i07/data/2026/si44580-1/processing&#39;</span>
+
+<span class="c1">#create your data loader for your data directory path, note if the 2d datasets are in the same folder as the 1d datasets the loader from the previous section can be reused</span>
+<span class="n">loader</span><span class="o">=</span><span class="n">data_loader</span><span class="p">(</span><span class="n">datafolder</span><span class="o">=</span><span class="n">folder1</span><span class="p">)</span>
+
+
+<span class="c1">#choose which datasets you want to load</span>
+<span class="n">exitmap_filenames</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;exitmap_610009_2026-03-24_10h23m19s.hdf5&#39;</span><span class="p">,</span><span class="s1">&#39;exitmap_432196_2026-03-24_10h16m26s.hdf5&#39;</span><span class="p">]</span>
+
+<span class="c1"># load the files into a results object</span>
+<span class="n">exitmapresults</span><span class="o">=</span><span class="n">loader</span><span class="o">.</span><span class="n">loadfiles</span><span class="p">(</span><span class="n">exitmap_filenames</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">exitmapresults</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">axs</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">axlist</span><span class="o">=</span><span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">res</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">exitmapresults</span><span class="p">):</span>
+    <span class="n">maplimits</span><span class="o">=</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">res</span><span class="o">.</span><span class="n">x_axis</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">res</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">res</span><span class="o">.</span><span class="n">y_axis</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+    <span class="n">map2d</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">axlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">map2d</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">map2d</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">map2d</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span><span class="n">extent</span><span class="o">=</span><span class="n">maplimits</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+    <span class="c1">#axlist[i].set_aspect(&#39;equal&#39;)</span>
+    <span class="n">axlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;exit_para (deg)&#39;</span><span class="p">)</span>
+    <span class="n">axlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;exit_perp (deg)&#39;</span><span class="p">)</span>
+
+<span class="n">selection_ring</span><span class="o">=</span><span class="n">Annulus</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">15</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.55</span><span class="p">)</span>
+<span class="n">selection_wedge</span> <span class="o">=</span> <span class="n">Wedge</span><span class="p">((</span><span class="mf">0.0</span><span class="p">),</span><span class="mi">40</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">axlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">selection_ring</span><span class="p">)</span>
+<span class="n">axlist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">selection_wedge</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="4.-Quick-peak-fitting">
+<h1>4. Quick peak fitting<a class="headerlink" href="#4.-Quick-peak-fitting" title="Link to this heading"></a></h1>
+<p>This cell below is if you have already loaded in some 1d data, and can then select specific peaks to carry out a peak fitting routine on. First create a set of peaks you want to use in the fit following the format</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">peak1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">peak</span><span class="p">,</span>
+         <span class="s1">&#39;settings&#39;</span><span class="p">:</span>
+            <span class="p">{</span><span class="s1">&#39;center&#39;</span><span class="p">:[</span><span class="mf">6.25</span><span class="p">,</span><span class="mf">6.2</span><span class="p">,</span><span class="mf">6.3</span><span class="p">],</span>
+             <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span>
+             <span class="s1">&#39;amplitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span>
+             <span class="s1">&#39;fraction&#39;</span><span class="p">:[</span><span class="mf">0.15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
+         <span class="p">}</span>
+</pre></div>
+</div>
+<p>The currently supported peak type names are listed below, and use <a class="reference external" href="https://lmfit.github.io/lmfit-py/builtin_models.html">built-in models</a> within the lmfit python package - click on the links below to find out more about the available settings for each peak type</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;pvoigt&quot;</span></code>: fits using <a class="reference external" href="https://lmfit.github.io/lmfit-py/builtin_models.html#lmfit.models.PseudoVoigtModel">PseudoVoigtModel</a>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;gaussian&quot;</span></code>: fits using <a class="reference external" href="https://lmfit.github.io/lmfit-py/builtin_models.html#lmfit.models.GaussianModel">GaussianModel</a>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;lorentzian&quot;</span></code>: fits using <a class="reference external" href="https://lmfit.github.io/lmfit-py/builtin_models.html#lmfit.models.LorentzianModel">LorentzianModel</a>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;split_lorentzian&quot;</span></code>: fits using <a class="reference external" href="https://lmfit.github.io/lmfit-py/builtin_models.html#lmfit.models.SplitLorentzianModel">SplitLorentzianModel</a>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;skewed_gaussian&quot;</span></code>: fits using <a class="reference external" href="https://lmfit.github.io/lmfit-py/builtin_models.html#lmfit.models.SkewedGaussianModel">SkewedGaussianModel</a>,</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.processing</span><span class="w"> </span><span class="kn">import</span> <span class="n">peakfit_and_plot</span>
+
+
+<span class="n">peak1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;pvoigt&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;settings&#39;</span><span class="p">:</span>
+            <span class="p">{</span><span class="s1">&#39;center&#39;</span><span class="p">:[</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.35</span><span class="p">,</span><span class="mf">0.425</span><span class="p">],</span>
+             <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">0.05</span><span class="p">],</span>
+             <span class="s1">&#39;amplitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mi">18000</span><span class="p">],</span>
+             <span class="s1">&#39;fraction&#39;</span><span class="p">:[</span><span class="mf">0.15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
+         <span class="p">}</span>
+
+<span class="n">peak2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;pvoigt&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;settings&#39;</span><span class="p">:</span>
+            <span class="p">{</span><span class="s1">&#39;center&#39;</span><span class="p">:[</span><span class="mf">0.43</span><span class="p">,</span><span class="mf">0.42</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span>
+             <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span>
+             <span class="s1">&#39;amplitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mi">1800</span><span class="p">],</span>
+             <span class="s1">&#39;fraction&#39;</span><span class="p">:[</span><span class="mf">0.15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
+         <span class="p">}</span>
+<span class="c1">#peaklist=[peak1]</span>
+<span class="n">peaklist</span><span class="o">=</span><span class="p">[</span><span class="n">peak2</span><span class="p">]</span>
+<span class="n">result_list</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">=</span><span class="n">ivqresults</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">q</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">x_axis</span>
+    <span class="n">intensity</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">con1</span><span class="o">=</span><span class="n">q</span><span class="o">&gt;</span><span class="mf">0.43</span>
+    <span class="n">con2</span><span class="o">=</span><span class="n">q</span><span class="o">&lt;</span><span class="mf">0.55</span>
+    <span class="n">selection</span><span class="o">=</span><span class="n">con1</span><span class="o">&amp;</span><span class="n">con2</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">q</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">intensity</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
+    <span class="n">report</span><span class="o">=</span><span class="n">peakfit_and_plot</span><span class="p">(</span><span class="n">peaklist</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<br/><br/><br/><br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1fwvals</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;p1_fwhm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">result_list</span><span class="p">]</span>
+<span class="c1">#p2fwvals = [result.params[&#39;p2_fwhm&#39;].value for result in result_list]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p1fwvals</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Diamond Light Source Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
