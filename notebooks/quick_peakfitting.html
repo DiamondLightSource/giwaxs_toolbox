@@ -129,7 +129,7 @@
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">giwaxs_toolbox.processing</span><span class="w"> </span><span class="kn">import</span> <span class="n">peakfit_and_plot</span>
@@ -152,7 +152,7 @@
          <span class="p">}</span>
 <span class="n">peaklist</span><span class="o">=</span><span class="p">[</span><span class="n">peak1</span><span class="p">]</span>
 <span class="c1">#peaklist=[peak1,peak2]</span>
-<span class="n">result_list</span><span class="o">=</span><span class="p">[]</span>
+
 
 <span class="n">res</span><span class="o">=</span><span class="n">ivqresults</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">q</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">x_axis</span>
@@ -163,11 +163,7 @@
 <span class="n">x</span><span class="o">=</span><span class="n">q</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
 <span class="n">y</span><span class="o">=</span><span class="n">intensity</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
 <span class="n">report</span><span class="o">=</span><span class="n">peakfit_and_plot</span><span class="p">(</span><span class="n">peaklist</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-
-    <span class="n">result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
-<br/></pre></div>
+<br/><br/><br/></pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -232,8 +228,21 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can run similar parameters for multiple datasets</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">=</span><span class="n">ivqresults</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">q</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">x_axis</span>
+    <span class="n">intensity</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">con1</span><span class="o">=</span><span class="n">q</span><span class="o">&gt;</span><span class="mf">6.15</span>
+    <span class="n">con2</span><span class="o">=</span><span class="n">q</span><span class="o">&lt;</span><span class="mf">6.35</span>
+    <span class="n">selection</span><span class="o">=</span><span class="n">con1</span><span class="o">&amp;</span><span class="n">con2</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">q</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">intensity</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
+    <span class="n">report</span><span class="o">=</span><span class="n">peakfit_and_plot</span><span class="p">(</span><span class="n">peaklist</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<br/></pre></div>
 </div>
 </div>
 </section>

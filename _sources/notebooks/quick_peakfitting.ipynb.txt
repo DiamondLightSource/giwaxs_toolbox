@@ -61,7 +61,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": null,
    "id": "ab67d66c",
    "metadata": {},
    "outputs": [
@@ -97,7 +97,7 @@
     "         }\n",
     "peaklist=[peak1]       \n",
     "#peaklist=[peak1,peak2]\n",
-    "result_list=[]\n",
+    "\n",
     "\n",
     "res=ivqresults[0]\n",
     "q=res.x_axis\n",
@@ -109,9 +109,7 @@
     "y=intensity[selection]\n",
     "report=peakfit_and_plot(peaklist,x,y)\n",
     "\n",
-    "for i in np.arange(5):\n",
-    "\n",
-    "    result_list.append(report)\n"
+    "\n"
    ]
   },
   {
@@ -204,7 +202,22 @@
    "id": "db4ea8c4",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "# You can run similar parameters for multiple datasets\n",
+    "\n",
+    "\n",
+    "for i in np.arange(5):\n",
+    "    res=ivqresults[i]\n",
+    "    q=res.x_axis\n",
+    "    intensity=res.data\n",
+    "    con1=q>6.15\n",
+    "    con2=q<6.35\n",
+    "    selection=con1&con2\n",
+    "    x=q[selection]\n",
+    "    y=intensity[selection]\n",
+    "    report=peakfit_and_plot(peaklist,x,y)\n",
+    "    result_list.append(report)\n"
+   ]
   }
  ],
  "metadata": {
