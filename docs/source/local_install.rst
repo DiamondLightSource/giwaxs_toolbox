@@ -1,7 +1,5 @@
-Installing locally
-=======================
-
-
+Installation giwaxs_toolbox locally
+=========================================
 
 
 #. Check your version of python

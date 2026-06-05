@@ -1,5 +1,5 @@
-Using the giwaxs_toolbox notebook
-===================================
+Accessing giwaxs_toolbox on Diamond NoMachine
+===============================================
 
 The giwaxs_toolbox can be accessed from the diamond module system using the command:
 
@@ -30,4 +30,4 @@ Then you can launch the jupyter lab viewer using the command:
 
 This will open up a new jupyter lab window in firefox, and the file 'giwaxs_toolbox_guide.ipynb' should be visible in the file navigator. 
 
-.. figure:: ./images/giwaxs_notebook.png
+.. figure:: ./images/giwaxs_toolbox_notebook.png
