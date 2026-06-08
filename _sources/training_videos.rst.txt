@@ -3,6 +3,9 @@ Training Videos
 
 Here are some introductory training videos on how to create datasets for the toolbox, and how to use the various features of the toolbox. 
 
+.. note:: 
+    
+    The initial version of the toolbox was called MINERVA_toolbox, so the workshop videos linked below refer to the MINERVA_toolbox, but the same features are available in the giwaxs_toolbox.
 
 1. Introduction to x-ray reflectivity
 
