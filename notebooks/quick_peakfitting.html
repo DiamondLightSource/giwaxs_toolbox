@@ -224,19 +224,58 @@
 6.23801411075692
 </pre></div></div>
 </div>
+<section id="fitting-peaks-to-a-stack-of-profiles">
+<h2>fitting peaks to a stack of profiles<a class="headerlink" href="#fitting-peaks-to-a-stack-of-profiles" title="Link to this heading"></a></h2>
+<p>You can run similar parameters for multiple profiles, by loading multiple profiles and then looping over the fitting routine. Below multiple slices from one dataset are loaded in and then each profile is fitted with a similar peak.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can run similar parameters for multiple datasets</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><br/><span></span><span class="c1">#choose which datasets you want to load</span>
 
+<span class="n">example_ivqfiles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;IvsQ_536350_2026-04-14_14h20m34s.hdf5&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="c1"># load the files into a results object</span>
+<span class="n">ivqresults</span><span class="o">=</span><span class="n">loader</span><span class="o">.</span><span class="n">loadfiles</span><span class="p">(</span><span class="n">example_ivqfiles</span><span class="p">,</span> <span class="n">index1vals</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">ivqresults</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">peak1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;pvoigt&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;settings&#39;</span><span class="p">:</span>
+            <span class="p">{</span><span class="s1">&#39;center&#39;</span><span class="p">:[</span><span class="mf">0.44</span><span class="p">,</span><span class="mf">0.42</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span>
+             <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">0.05</span><span class="p">],</span>
+             <span class="s1">&#39;amplitude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="mi">18000</span><span class="p">],</span>
+             <span class="s1">&#39;fraction&#39;</span><span class="p">:[</span><span class="mf">0.15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
+         <span class="p">}</span>
+<span class="n">peaklist</span><span class="o">=</span><span class="p">[</span><span class="n">peak1</span><span class="p">]</span>
+<span class="n">result_list</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">res</span><span class="o">=</span><span class="n">ivqresults</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="n">q</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">x_axis</span>
     <span class="n">intensity</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">data</span>
-    <span class="n">con1</span><span class="o">=</span><span class="n">q</span><span class="o">&gt;</span><span class="mf">6.15</span>
-    <span class="n">con2</span><span class="o">=</span><span class="n">q</span><span class="o">&lt;</span><span class="mf">6.35</span>
+    <span class="n">con1</span><span class="o">=</span><span class="n">q</span><span class="o">&gt;</span><span class="mf">0.4</span>
+    <span class="n">con2</span><span class="o">=</span><span class="n">q</span><span class="o">&lt;</span><span class="mf">0.5</span>
     <span class="n">selection</span><span class="o">=</span><span class="n">con1</span><span class="o">&amp;</span><span class="n">con2</span>
     <span class="n">x</span><span class="o">=</span><span class="n">q</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
     <span class="n">y</span><span class="o">=</span><span class="n">intensity</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
@@ -245,6 +284,112 @@
 <br/></pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_0.png" src="../_images/notebooks_quick_peakfitting_11_0.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_1.png" src="../_images/notebooks_quick_peakfitting_11_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_2.png" src="../_images/notebooks_quick_peakfitting_11_2.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_3.png" src="../_images/notebooks_quick_peakfitting_11_3.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_4.png" src="../_images/notebooks_quick_peakfitting_11_4.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_5.png" src="../_images/notebooks_quick_peakfitting_11_5.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_6.png" src="../_images/notebooks_quick_peakfitting_11_6.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_7.png" src="../_images/notebooks_quick_peakfitting_11_7.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_8.png" src="../_images/notebooks_quick_peakfitting_11_8.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_11_9.png" src="../_images/notebooks_quick_peakfitting_11_9.png" />
+</div>
+</div>
+<p>You can then select out the fitted parameters you are interested and visualise them on a plot</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centre_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;p1_center&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">result_list</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">centre_values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Dataset Index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peak Center (1/Å)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0, 0.5, &#39;Peak Center (1/Å)&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_quick_peakfitting_13_1.png" src="../_images/notebooks_quick_peakfitting_13_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
 
