@@ -78,12 +78,12 @@ API
 
    .. autodoc2-docstring:: plotting.get_logger
 
-.. py:function:: plot_2d_map(loaded_data, loaded_axis, filename, fig, ax, logscale, axlabels)
+.. py:function:: plot_2d_map(loaded_data, loaded_axis, filename, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale, axlabels) -> matplotlib.figure.Figure
    :canonical: plotting.plot_2d_map
 
    .. autodoc2-docstring:: plotting.plot_2d_map
 
-.. py:function:: plot_1d_profile(loaded_data, loaded_axis, filename, fig, ax, logscale, axlabels, label=None)
+.. py:function:: plot_1d_profile(loaded_data, loaded_axis, filename, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale, axlabels, label=None) -> matplotlib.figure.Figure
    :canonical: plotting.plot_1d_profile
 
    .. autodoc2-docstring:: plotting.plot_1d_profile
@@ -136,32 +136,32 @@ API
 
       .. autodoc2-docstring:: plotting.ind_list_plotter.set_scantype
 
-   .. py:method:: _plot_chimap(data_result: giwaxs_toolbox.processing.result2d, filename: str, fig, ax, logscale: bool)
+   .. py:method:: _plot_chimap(data_result: giwaxs_toolbox.processing.result2d, filename: str, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale: bool) -> matplotlib.figure.Figure
       :canonical: plotting.ind_list_plotter._plot_chimap
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_chimap
 
-   .. py:method:: _plot_qmap(data_result: giwaxs_toolbox.processing.result2d, filename: str, fig, ax, logscale: bool)
+   .. py:method:: _plot_qmap(data_result: giwaxs_toolbox.processing.result2d, filename: str, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale: bool) -> matplotlib.figure.Figure
       :canonical: plotting.ind_list_plotter._plot_qmap
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_qmap
 
-   .. py:method:: _plot_exitmap(data_result: giwaxs_toolbox.processing.result2d, filename: str, fig, ax, logscale: bool)
+   .. py:method:: _plot_exitmap(data_result: giwaxs_toolbox.processing.result2d, filename: str, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale: bool) -> matplotlib.figure.Figure
       :canonical: plotting.ind_list_plotter._plot_exitmap
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_exitmap
 
-   .. py:method:: _plot_ivsq(data_result: giwaxs_toolbox.processing.result1d, filename, fig, ax, logscale)
+   .. py:method:: _plot_ivsq(data_result: giwaxs_toolbox.processing.result1d, filename, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale: bool) -> matplotlib.figure.Figure
       :canonical: plotting.ind_list_plotter._plot_ivsq
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_ivsq
 
-   .. py:method:: _plot_ivsq_heatmap(data_result: giwaxs_toolbox.processing.result1d, filename, fig, ax, logscale)
+   .. py:method:: _plot_ivsq_heatmap(data_result: giwaxs_toolbox.processing.result1d, filename, fig: matplotlib.figure.Figure, ax, logscale) -> matplotlib.figure.Figure
       :canonical: plotting.ind_list_plotter._plot_ivsq_heatmap
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_ivsq_heatmap
 
-   .. py:method:: _plot_ivschi(data_result: giwaxs_toolbox.processing.result1d, filename, fig, ax, logscale)
+   .. py:method:: _plot_ivschi(data_result: giwaxs_toolbox.processing.result1d, filename, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale: bool) -> matplotlib.figure.Figure
       :canonical: plotting.ind_list_plotter._plot_ivschi
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_ivschi
