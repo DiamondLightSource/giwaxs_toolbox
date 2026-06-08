@@ -3,8 +3,6 @@ Training Videos
 
 Here are some introductory training videos on how to create datasets for the toolbox, and how to use the various features of the toolbox. 
 
-.. note:: 
-    These are hosted on a Diamond Light Source OneDrive account and so access will need to be requested. Contact philip.mousley@diamond.ac.uk to request access.
 
 1. Introduction to x-ray reflectivity
 
