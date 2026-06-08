@@ -11,7 +11,9 @@ import pandas as pd
 # from matplotlib import cm as mpl_cm
 from IPython.display import display
 from ipywidgets import fixed, interact
+from matplotlib.axes import Axes
 from matplotlib.colors import LogNorm, Normalize
+from matplotlib.figure import Figure
 
 from giwaxs_toolbox.processing import data_loader, result1d, result2d
 
@@ -43,7 +45,9 @@ def get_logger(folderpath, name):
     return logger
 
 
-def plot_2d_map(loaded_data, loaded_axis, filename, fig, ax, logscale, axlabels):
+def plot_2d_map(
+    loaded_data, loaded_axis, filename, fig: Figure, ax: Axes, logscale, axlabels
+) -> Figure:
     map2d = loaded_data
     q_para, q_perp = loaded_axis
     cm = "viridis"
@@ -77,8 +81,15 @@ def plot_2d_map(loaded_data, loaded_axis, filename, fig, ax, logscale, axlabels)
 
 
 def plot_1d_profile(
-    loaded_data, loaded_axis, filename, fig, ax, logscale, axlabels, label=None
-):
+    loaded_data,
+    loaded_axis,
+    filename,
+    fig: Figure,
+    ax: Axes,
+    logscale,
+    axlabels,
+    label=None,
+) -> Figure:
     """
     Plot a 1D intensity profile.
     """
@@ -170,8 +181,13 @@ class ind_list_plotter:
         self.set_dataloader()
 
     def _plot_chimap(
-        self, data_result: result2d, filename: str, fig, ax, logscale: bool
-    ):
+        self,
+        data_result: result2d,
+        filename: str,
+        fig: Figure,
+        ax: Axes,
+        logscale: bool,
+    ) -> Figure:
         axlabelx = data_result.x_unit or "$q_{total}$  [Å⁻¹]"
         axlabely = data_result.y_unit or "$Chi$  [deg]"
         axlabels = [axlabelx, axlabely]
@@ -185,7 +201,14 @@ class ind_list_plotter:
             axlabels,
         )
 
-    def _plot_qmap(self, data_result: result2d, filename: str, fig, ax, logscale: bool):
+    def _plot_qmap(
+        self,
+        data_result: result2d,
+        filename: str,
+        fig: Figure,
+        ax: Axes,
+        logscale: bool,
+    ) -> Figure:
         axlabelx = data_result.x_unit or "$q_{para}$  [Å⁻¹]"
         axlabely = data_result.y_unit or "$q_{perp}$  [Å⁻¹]"
         axlabels = [axlabelx, axlabely]
@@ -200,8 +223,13 @@ class ind_list_plotter:
         )
 
     def _plot_exitmap(
-        self, data_result: result2d, filename: str, fig, ax, logscale: bool
-    ):
+        self,
+        data_result: result2d,
+        filename: str,
+        fig: Figure,
+        ax: Axes,
+        logscale: bool,
+    ) -> Figure:
         axlabelx = data_result.x_unit or "$exitangle_{para}$  [deg]"
         axlabely = data_result.y_unit or "$exitangle_{perp}$  [deg]"
         axlabels = [axlabelx, axlabely]
@@ -215,7 +243,9 @@ class ind_list_plotter:
             axlabels,
         )
 
-    def _plot_ivsq(self, data_result: result1d, filename, fig, ax, logscale):
+    def _plot_ivsq(
+        self, data_result: result1d, filename, fig: Figure, ax: Axes, logscale: bool
+    ) -> Figure:
         axlabels = ["Intensity", "Q (A^-1)"]
         return plot_1d_profile(
             data_result.data,
@@ -227,7 +257,14 @@ class ind_list_plotter:
             axlabels,
         )
 
-    def _plot_ivsq_heatmap(self, data_result: result1d, filename, fig, ax, logscale):
+    def _plot_ivsq_heatmap(
+        self,
+        data_result: result1d,
+        filename,
+        fig: Figure,
+        ax: Axes,
+        logscale,
+    ) -> Figure:
         axlabels = ["Q (A^-1)", "index1"]
         datashape = np.shape(data_result.data)
         return plot_2d_map(
@@ -240,7 +277,9 @@ class ind_list_plotter:
             axlabels,
         )
 
-    def _plot_ivschi(self, data_result: result1d, filename, fig, ax, logscale):
+    def _plot_ivschi(
+        self, data_result: result1d, filename, fig: Figure, ax: Axes, logscale: bool
+    ) -> Figure:
         axlabels = ["Intensity", "Chi [Deg]"]
         return plot_1d_profile(
             data_result.data,
