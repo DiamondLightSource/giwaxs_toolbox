@@ -156,7 +156,7 @@ API
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_ivsq
 
-   .. py:method:: _plot_ivsq_heatmap(data_result: giwaxs_toolbox.processing.result1d, filename, fig: matplotlib.figure.Figure, ax, logscale) -> matplotlib.figure.Figure
+   .. py:method:: _plot_ivsq_heatmap(data_result: giwaxs_toolbox.processing.result1d, filename, fig: matplotlib.figure.Figure, ax: matplotlib.axes.Axes, logscale) -> matplotlib.figure.Figure
       :canonical: plotting.ind_list_plotter._plot_ivsq_heatmap
 
       .. autodoc2-docstring:: plotting.ind_list_plotter._plot_ivsq_heatmap
