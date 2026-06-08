@@ -19,7 +19,15 @@ Below are some walkthroughs that will guide you through the various features of 
 .. _Extracting Datasets: ./notebooks/extracting_datasets.ipynb
 .. _Quick Peak Fitting: ./notebooks/quick_peakfitting.ipynb
 
-.. toctree::
-   :hidden:
-   :maxdepth: 3
 
+
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+
+    notebooks/tips_for_notebooks
+    notebooks/interactivefolder_widget
+    notebooks/quick_comparison_widget
+    notebooks/extracting_datasets
+    notebooks/quick_peakfitting
