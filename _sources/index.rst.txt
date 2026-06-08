@@ -32,6 +32,19 @@ Training videos
 
    `training videos`_ : A collection of training videos on how to use the various features of the giwaxs_toolbox, and how to create datasets to use with the toolbox.
 
+
+
+
+Contributing
+------------
+As with any coding project, there are many ways to contribue. To report a bug or suggest a feature, `open an issue on the github repository`_. If you would like to contribute code, we would recommend that you first `raise an issue`_ before diving into writing code, so we can let you know if we are working on something similar already. To e.g. fix typos in documentation or in the code, or for other minor changes, feel free to make pull requests directly.
+
+
+Contact us
+----------------
+If you need to contact the developers about anything, please either `raise an issue on the github repository`_ if appropriate, or send an email to philip.mousley@diamond.ac.uk.
+
+
 .. toctree::
    :hidden:
    :maxdepth: 2
@@ -47,6 +60,9 @@ Training videos
 .. _walkthrough guides: ./useage_guide.html
 .. _training videos: ./training_videos.html
 .. _fast_rsm: https://fast-rsm.readthedocs.io/en/latest/index.html
+.. _open an issue on the github repository: https://github.com/DiamondLightSource/giwaxs_toolbox/issues
+.. _raise an issue: https://github.com/DiamondLightSource/giwaxs_toolbox/issues
+.. _raise an issue on the github repository: https://github.com/DiamondLightSource/giwaxs_toolbox/issues
 
 
 
