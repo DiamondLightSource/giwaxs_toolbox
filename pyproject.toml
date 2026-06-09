@@ -54,6 +54,14 @@ GitHub = "https://github.com/DiamondLightSource/giwaxs_toolbox"
 email = "philip.mousley@diamond.ac.uk"
 name = "Philip Mousley"
 
+
+[[project.authors]] # Further authors may be added by duplicating this section
+name = "Joel Smith"
+
+[[project.authors]] # Further authors may be added by duplicating this section
+name = "Olivia Gough"
+
+
 [tool.setuptools_scm]
 version_file = "src/giwaxs_toolbox/_version.py"
 
