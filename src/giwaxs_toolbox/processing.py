@@ -156,9 +156,14 @@ class data_loader:
         x_out = data[paths[1]][axisind]
         x_out_name = paths[1]
         y_out_name = paths[0]
-        supplementary_data = (
-            data["supplementary_data"] if "supplementary_data" in data.keys() else None
-        )
+
+        if "supplementary_data" in data:
+            supplementary_data = {
+                k: data["supplementary_data"][k][:] for k in data["supplementary_data"]
+            }
+        else:
+            supplementary_data = None
+
         return result1d(
             data=y_out,
             x_axis=x_out,
@@ -173,9 +178,12 @@ class data_loader:
         perp_out = -1 * data[paths[2]][axisind]
         para_unit = data[paths[1] + "_unit"][()].decode("utf-8")
         perp_unit = data[paths[2] + "_unit"][()].decode("utf-8")
-        supplementary_data = (
-            data["supplementary_data"] if "supplementary_data" in data.keys() else None
-        )
+        if "supplementary_data" in data:
+            supplementary_data = {
+                k: data["supplementary_data"][k][:] for k in data["supplementary_data"]
+            }
+        else:
+            supplementary_data = None
         return result2d(
             data=dataout,
             x_axis=para_out,
