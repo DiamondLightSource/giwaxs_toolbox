@@ -107,6 +107,7 @@ class result2d:
     y_axis: np.ndarray
     x_unit: str | None = None
     y_unit: str | None = None
+    supplementary_data: dict | None = None
 
 
 @dataclass
@@ -117,6 +118,7 @@ class result1d:
     x_axis_name: str
     x2_axis: np.ndarray | None = None
     x2_axis_name: str | None = None
+    supplementary_data: dict | None = None
 
 
 def check_shape(inshape, expected_shape, index1, index2):
@@ -154,8 +156,20 @@ class data_loader:
         x_out = data[paths[1]][axisind]
         x_out_name = paths[1]
         y_out_name = paths[0]
+
+        if "supplementary_data" in data:
+            supplementary_data = {
+                k: data["supplementary_data"][k][:] for k in data["supplementary_data"]
+            }
+        else:
+            supplementary_data = None
+
         return result1d(
-            data=y_out, x_axis=x_out, data_name=y_out_name, x_axis_name=x_out_name
+            data=y_out,
+            x_axis=x_out,
+            data_name=y_out_name,
+            x_axis_name=x_out_name,
+            supplementary_data=supplementary_data,
         )
 
     def get_2d_data(self, data, paths, dataind, axisind):
@@ -164,13 +178,19 @@ class data_loader:
         perp_out = -1 * data[paths[2]][axisind]
         para_unit = data[paths[1] + "_unit"][()].decode("utf-8")
         perp_unit = data[paths[2] + "_unit"][()].decode("utf-8")
-
+        if "supplementary_data" in data:
+            supplementary_data = {
+                k: data["supplementary_data"][k][:] for k in data["supplementary_data"]
+            }
+        else:
+            supplementary_data = None
         return result2d(
             data=dataout,
             x_axis=para_out,
             y_axis=perp_out,
             x_unit=para_unit,
             y_unit=perp_unit,
+            supplementary_data=supplementary_data,
         )
 
     def read_1d_datafile(

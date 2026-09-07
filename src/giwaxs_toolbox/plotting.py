@@ -141,11 +141,17 @@ class ind_list_plotter:
         # )
 
     def get_files(self):
-        return [
+        """
+        returns a list of files in the folderpath that match the scantype and have .hdf5 extension, sorted by the date part of the filename split by underscores.
+        filenames are of the format: <scantype>_<scannumber>_<date>_<time>.hdf5
+        """
+        filelist = [
             f
             for f in os.listdir(self.folderpath)
             if (self.scantype in f) and (f.endswith(".hdf5"))
         ]
+        filelist.sort(key=lambda x: x.split("_")[2])
+        return filelist
 
     def set_plot_callback(self):
         callback_dict = {

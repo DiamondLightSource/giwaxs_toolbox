@@ -107,6 +107,13 @@ API
 
       .. autodoc2-docstring:: processing.result2d.y_unit
 
+   .. py:attribute:: supplementary_data
+      :canonical: processing.result2d.supplementary_data
+      :type: dict | None
+      :value: None
+
+      .. autodoc2-docstring:: processing.result2d.supplementary_data
+
 .. py:class:: result1d
    :canonical: processing.result1d
 
@@ -153,6 +160,13 @@ API
       :value: None
 
       .. autodoc2-docstring:: processing.result1d.x2_axis_name
+
+   .. py:attribute:: supplementary_data
+      :canonical: processing.result1d.supplementary_data
+      :type: dict | None
+      :value: None
+
+      .. autodoc2-docstring:: processing.result1d.supplementary_data
 
 .. py:function:: check_shape(inshape, expected_shape, index1, index2)
    :canonical: processing.check_shape
