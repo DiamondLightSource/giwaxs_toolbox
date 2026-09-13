@@ -13,7 +13,7 @@ classifiers = [
 ]
 description = "A python based toolbox with useful functions for visualising and analysing GIWAXS data collected on the I07 beamline at Diamond Light Source ."
 dependencies = [
-    "matplotlib==3.10.8",
+    "matplotlib==3.11.2",
     "numpy==2.4.3",
     "lmfit==1.3.4",
     "h5py==3.16.0",
